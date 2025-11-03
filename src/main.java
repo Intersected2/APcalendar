@@ -1,6 +1,16 @@
 public class main {
     public static void main(String []args){
-        System.out.println(APCalendar.numberOfLeapYears(2019,2021));
-//        System.out.println(APCalendar.firstDayOfYear(2021));
+        System.out.println(APCalendar.numberOfLeapYears(2024,2020));
+        System.out.println(APCalendar.exclusivenumberOfLeapYears(2020,2020));
+        System.out.println(APCalendar.dayOfYear(3,12,2024));
+        System.out.println(APCalendar.dayOfYear(3,1,2016));
+        System.out.println(APCalendar.dayOfYear(3,1,2017));
+        System.out.println(APCalendar.dayOfWeek(3,12,2015));
+        System.out.println(APCalendar.firstDayOfYear(2018));
+        System.out.println(APCalendar.firstDayOfYear(2015));
+        System.out.println(APCalendar.isLeapYear(2020));
+        System.out.println(APCalendar.dayOfYear(3,1,2017));
+        System.out.println(APCalendar.dayOfYear(3,1,2016));
+        System.out.println(APCalendar.dayOfWeek(4,12,2019));
     }
 }
