@@ -61,33 +61,14 @@ public class APCalendar {
      * where 0 denotes Sunday, 1 denotes Monday, ..., and 6 denotes Saturday.
      */
     public static int firstDayOfYear(int year){
-        int start = 2019;
-        int startw= 2;
-        int x1 = 0;
-        int ram = 0;
-        int fram1 = APCalendar.exclusivenumberOfLeapYears(year,2019);
-        int fram2 = startw;
-        int days = 0;
-        if (year > 2019) {
-            x1 = year - 2019;
-            days = days + (365) * (year - 2019);
-            fram2 = fram2 + days + (fram1);
-            fram2 = fram2 % 7;
-            if (fram2 == 7){
-                fram2 = 0;
+        int day = 1;
+        for (int i = 1; i < year; i++){
+            day++;
+            if (isLeapYear(i)){
+                day++;
             }
         }
-        if (year == 2019){
-            return 2;
-        }
-        if (year < start) {
-            days = 365 * (year - start);
-            fram2 = fram2 + days + fram1;
-            fram2 %= 7;
-            if (fram2 < 0) fram2 += 7;
-            return fram2;
-        }
-        return fram2;
+        return day % 7 - 1;
     }
     /** Returns n, where month, day, and year specify the nth day of the year.
      * Returns 1 for January 1 (month = 1, day = 1) of any year.
