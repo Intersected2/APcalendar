@@ -198,4 +198,54 @@ public class APCalendar {
         }
         return days;
     }
+    //the one below only counts from the first day of the year to another first day of the year
+    public static int numofdayspassedinyears(int year1, int year2){
+        int day = 0;
+        if (year1 > year2){
+            for (int i = year2; i < year1; i++){
+                day = day + 365;
+                if (isLeapYear(i)){
+                    day++;
+                }
+            }
+        }else if (year1 < year2){
+            for (int i = year1; i < year2; i++){
+                day = day + 365;
+                if (isLeapYear(i)){
+                    day++;
+                }
+            }
+        }
+        return day;
+    }
+    public static int totalnumofdayspassed(int month, int day, int year, int month1, int day1, int year1){
+        int days = 0;
+        int ram = 0;
+        int ram1 = 0;
+        ram = dayOfYear(month, day, year);
+        ram1 = dayOfYear(month1, day1, year1);
+        days = numofdayspassedinyears(year, year1);
+        if (year > year1){
+            days = days + ram - ram1;
+            return days;
+        }else if (year1 > year){
+            days = days + ram1 - ram;
+            return days;
+        }
+        if (month > month1){
+            days = days + ram - ram1;
+            return days;
+        }else if (month1 > month){
+            days = days + ram1 - ram;
+            return days;
+        }
+        if (day > day1){
+            days = days + ram - ram1;
+            return days;
+        }else if (day1 > day){
+            days = days + ram1 - ram;
+            return days;
+        }
+        return days;
+    }
 }

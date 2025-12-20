@@ -14,5 +14,8 @@ public class main {
         System.out.println(APCalendar.dayOfWeek(4,12,2019));
         System.out.println(APCalendar.dayOfWeek(1,5,2019));
         System.out.println(APCalendar.dayOfWeek(1,10,2019));
+        System.out.println(APCalendar.dayOfYear(3,1,2016));
+        System.out.println(APCalendar.numofdayspassedinyears(2020,2022));
+        System.out.println(APCalendar.totalnumofdayspassed(3,1,2021,8,12,2020));
     }
 }
